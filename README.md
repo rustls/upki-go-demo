@@ -7,8 +7,9 @@ context. To demo properly, run on an OS where Go uses its own verifier, like Lin
 
 ## Preparation
 
-- Checkout the [high-level revocation API](https://github.com/rustls/upki/pull/21) branch
+- Checkout [upki](https://github.com/rustls/upki/)
 - `cargo install --path upki`
+- `cargo cinstall -path upki --prefix out/ --libdir lib/`
 - `upki fetch`
 - Clone this repository
 
