@@ -1,12 +1,12 @@
 package main
 
 /*
-#cgo CFLAGS: -I${SRCDIR}/../upki/upki-ffi
-#cgo LDFLAGS: -L${SRCDIR}/../upki/target/release -lupki
+#cgo CFLAGS: -I${SRCDIR}/../upki/out/include
+#cgo LDFLAGS: -L${SRCDIR}/../upki/out/lib -lupki
 #cgo darwin LDFLAGS: -framework Security -framework CoreFoundation -lresolv
-#cgo linux LDFLAGS: -Wl,-rpath,${SRCDIR}/../upki/target/release -lm -ldl -lpthread
+#cgo linux LDFLAGS: -Wl,-rpath,${SRCDIR}/../upki/out/lib -lm -ldl -lpthread
 
-#include "upki.h"
+#include "upki/upki.h"
 */
 import "C"
 
@@ -29,7 +29,7 @@ func main() {
 
 	// Initialize upki config
 	var config *C.upki_config
-	result := C.upki_config_new(&config)
+	result := C.upki_config_new(nil, &config)
 	if result != C.UPKI_OK {
 		fmt.Fprintf(os.Stderr, "failed to create upki config: %d\n", result)
 		os.Exit(1)
