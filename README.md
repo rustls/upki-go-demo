@@ -1,9 +1,14 @@
 # upki demo with Go
 
-This is a minimal demonstration of how upki can be integrated into a Go application.
+This is a minimal demonstration of how upki can be integrated into a Go
+application using the native upki FFI API and [cgo](https://go.dev/wiki/cgo).
 
-Note: on macOS (and presumably Windows), Go uses the platform verifier which has revocation
-context. To demo properly, run on an OS where Go uses its own verifier, like Linux.
+A cgo-less alternative is [proposed upstream](https://github.com/golang/go/issues/82402) 
+for native integration.
+
+Note: on macOS (and presumably Windows), Go uses the platform verifier which has
+revocation context. To demo properly, run on an OS where Go uses its own
+verifier, like Linux.
 
 ## Preparation
 
